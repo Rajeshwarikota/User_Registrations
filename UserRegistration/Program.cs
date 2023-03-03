@@ -11,6 +11,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine(".....User Registration......");
+            Validating.ValidatingFirstName();
             Console.ReadLine();
         }
     }
