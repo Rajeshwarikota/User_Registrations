@@ -24,6 +24,13 @@ namespace UserRegistration
             string input = Console.ReadLine();
             validatingpattern(input, pattern);
         }
+        public static void ValidatingEmail()
+        {
+            Console.WriteLine("enter the Email");
+            string pattern = "^[a,b,c]{3}[.][A-Z]{3}[@][b,l]{2}[.][c,o]{2}[.][a-z]{2}";
+            string input = Console.ReadLine();
+            validatingpattern(input, pattern);
+        }
         public static void validatingpattern(string input, string pattern)
         {
             if (Regex.IsMatch(input, pattern))

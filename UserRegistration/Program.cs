@@ -13,6 +13,7 @@ namespace UserRegistration
             Console.WriteLine(".....User Registration......");
             Validating.ValidatingFirstName();
             Validating.ValidatingLastName();
+            Validating.ValidatingEmail();
             Console.ReadLine();
         }
     }
