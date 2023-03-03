@@ -38,6 +38,13 @@ namespace UserRegistration
             string input = Console.ReadLine();
             validatingpattern(input, pattern);
         }
+        public static void Validatingpassword()
+        {
+            Console.WriteLine("enter the 8 character");
+            string pattern = "^[a-zA-Z0-9]{8}";
+            string input = Console.ReadLine();
+            validatingpattern(input, pattern);
+        }
         public static void validatingpattern(string input, string pattern)
         {
             if (Regex.IsMatch(input, pattern))
