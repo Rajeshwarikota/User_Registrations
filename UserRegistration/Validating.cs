@@ -41,7 +41,7 @@ namespace UserRegistration
         public void Validatingpassword()
         {
             Console.WriteLine("enter the 8 character");
-            string pattern = "(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
+            string pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*,.]{1}).{8,}$";
             string input = Console.ReadLine();
             validatingpattern(input, pattern);
         }
