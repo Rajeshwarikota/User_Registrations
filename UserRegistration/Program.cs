@@ -11,9 +11,8 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine(".....User Registration......");
-
-            Validating validate = new Validating();
-            Console.WriteLine("Please Choose \n1.firstname \n2.lastname \n3.email \n4.phonenum \n5.password  \n20.exit");
+           Validating validate = new Validating();
+            Console.WriteLine("Please Choose \n1.firstname \n2.lastname \n3.email \n4.phonenum \n5.password \n6:AllMails \n20.exit");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -32,7 +31,9 @@ namespace UserRegistration
                 case 5:
                     validate.Validatingpassword();
                     break;
-              
+                case 6:
+                    validate.ValidatingMultipleEmail();
+                    break;
 
                 default:
                     Console.WriteLine("Choose the Correct Number !");
