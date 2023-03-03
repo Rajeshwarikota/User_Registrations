@@ -31,6 +31,13 @@ namespace UserRegistration
             string input = Console.ReadLine();
             validatingpattern(input, pattern);
         }
+        public static void ValidatingPhoneNumber()
+        {
+            Console.WriteLine("enter the phone number");
+            string pattern = "^[0-9]{2}\\s[0-9]{10}";
+            string input = Console.ReadLine();
+            validatingpattern(input, pattern);
+        }
         public static void validatingpattern(string input, string pattern)
         {
             if (Regex.IsMatch(input, pattern))

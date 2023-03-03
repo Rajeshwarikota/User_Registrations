@@ -14,6 +14,7 @@ namespace UserRegistration
             Validating.ValidatingFirstName();
             Validating.ValidatingLastName();
             Validating.ValidatingEmail();
+            Validating.ValidatingPhoneNumber();
             Console.ReadLine();
         }
     }
