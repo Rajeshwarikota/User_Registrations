@@ -33,10 +33,10 @@ namespace ValidationTesting
         [DataRow("abc-100@yahoo.com", "Happy")]
         [DataRow("abc@%*.com", "Sad")]
         [DataRow("abc@gmail.com.", "Sad")]
-        public void Validating_Email(string email, string expected)
+        public void Validating_Email(string emails, string expected)
         {
             Validating validate = new Validating();
-            string actual = Validating.Email(email);
+            string actual = Validating.Email(emails);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -62,6 +62,21 @@ namespace ValidationTesting
             string actual = Validating.Password(password);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [DataRow(new string[] { "abc.xyz@bl.co.in", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc@100yahoo.com", "abc@gmail.com.com", "abc.100@abc.com.au", "ABC1@APPLE.com," }, "Happy")]
+        [DataRow(new string[] { "asc@kd@.com", "bc@gmail.com,in", "abc-100@.com,", "abc@gmail.com.", "abc@%*.com", "abc..nn@gmail.com.", "abc@%*.com", "abc@gmail.com.1a" }, "Sad")]
+        public void Validating_Mutiple_Email(string[] emails, string expected)
+        {
 
+            Validating validate = new Validating();
+
+            foreach (string s in emails)
+            {
+                Console.Write("\n" + s + " -");
+                string actual = Validating.Email(s);
+                Assert.AreEqual(expected, actual);
+            }
+
+        }
     }
 }
